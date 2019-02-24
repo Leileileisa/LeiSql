@@ -1,12 +1,14 @@
 #include "stdafx.h"
 #include "DataStorage.h"
 
-
-DataStorage::DataStorage()
+namespace LeiSQL
 {
-}
+    DataStorage::DataStorage()
+    {
+    }
 
 
-DataStorage::~DataStorage()
-{
+    DataStorage::~DataStorage()
+    {
+    }
 }

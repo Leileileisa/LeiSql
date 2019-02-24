@@ -1,8 +1,15 @@
 #pragma once
-class OrderAnalyze
+#ifndef ORDERANALYZE_H
+#define ORDERANALYZE_H
+namespace LeiSQL
 {
-public:
-    OrderAnalyze();
-    ~OrderAnalyze();
-};
+    class OrderAnalyze
+    {
+    public:
+        OrderAnalyze();
+        ~OrderAnalyze();
+    };
+}
+#endif
+
 

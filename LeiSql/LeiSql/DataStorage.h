@@ -1,8 +1,14 @@
 #pragma once
-class DataStorage
+#ifndef DATASTROAGE_H
+#define DATASTROAGE_H
+namespace LeiSQL
 {
-public:
-    DataStorage();
-    ~DataStorage();
-};
+    class DataStorage
+    {
+    public:
+        DataStorage();
+        ~DataStorage();
+    };
+}
+#endif // !DATASTROAGE_H
 

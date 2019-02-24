@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BPlus.h" />
     <ClInclude Include="DataStorage.h" />
     <ClInclude Include="LeiSql.h" />
     <ClInclude Include="OrderAnalyze.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BPlus.cpp" />
     <ClCompile Include="DataStorage.cpp" />
     <ClCompile Include="LeiSql.cpp" />
     <ClCompile Include="OrderAnalyze.cpp" />

@@ -1,12 +1,14 @@
 #include "stdafx.h"
 #include "OrderAnalyze.h"
 
-
-OrderAnalyze::OrderAnalyze()
+namespace LeiSQL
 {
-}
+    OrderAnalyze::OrderAnalyze()
+    {
+    }
 
 
-OrderAnalyze::~OrderAnalyze()
-{
+    OrderAnalyze::~OrderAnalyze()
+    {
+    }
 }
