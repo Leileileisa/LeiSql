@@ -15,56 +15,34 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="LeiSql.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="OrderAnalyze.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="DataStorage.h">
+    <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="BPlus.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DataStorage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderAnalyze.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="LeiSql.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="OrderAnalyze.cpp">
+    <ClCompile Include="BPlus.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DataStorage.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="BPlus.cpp">
+    <ClCompile Include="OrderAnalyze.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="LeiSql.rc">
-      <Filter>资源文件</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="small.ico">
-      <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="LeiSql.ico">
-      <Filter>资源文件</Filter>
-    </Image>
   </ItemGroup>
 </Project>

@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "OrderAnalyze.h"
 
 namespace LeiSQL
