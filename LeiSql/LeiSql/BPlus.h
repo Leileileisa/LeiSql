@@ -9,25 +9,48 @@ namespace LeiSQL
         class DataNode
         {
         public:
-            DataNode(int data):Data(data),ChildNode(nullptr)
+            DataNode(char* username,char* passwd,DataNode* childNode=nullptr) :Username(username),Passwd(passwd),ChildNode(childNode)
             {
 
             }
+            ~DataNode()
+            {
+
+            }
+            int GetUID()
+            {
+                return UID;
+            }
         private:
-            int Data;
-            
+            int UID;
+            char* Username;
+            char* Passwd;
             DataNode* ChildNode;
         };
         class TreeNode
         {
         public:
-            TreeNode():ptrStart(malloc(4096))
+            TreeNode():PtrStart(malloc(4096)),PtrNow(PtrStart),PtrEnd(PtrStart+4096)
             {
+                
+            }
+            void* Build(int uid, const char* username, const char* passwd)
+            {
+                int length;
+                if (PtrEnd - PtrNow < length)
+                {
 
+                }
+                else
+                {
+
+                }
             }
         private:
-            void* ptrStart;
-            void* ptrNow;
+            void* PtrStart;
+            void* PtrNow;
+            void* PtrEnd;
+            DataNode* FirstNode;
         };
         
     public:
@@ -38,7 +61,8 @@ namespace LeiSQL
         DataNode Find(const char* username);
         ~BPlus();
     private:
-        unsigned int  Uid;
+        unsigned int  UID;
+        TreeNode RootNode;
     };
 }
 #endif
