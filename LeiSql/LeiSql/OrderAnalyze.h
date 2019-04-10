@@ -1,6 +1,7 @@
 #pragma once
 #ifndef ORDERANALYZE_H
 #define ORDERANALYZE_H
+#include "DataStorage.h"
 namespace LeiSQL
 {
     class OrderAnalyze
@@ -8,6 +9,7 @@ namespace LeiSQL
     public:
         OrderAnalyze();
         ~OrderAnalyze();
+        void Process(const char* order);
     };
 }
 #endif

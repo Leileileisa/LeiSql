@@ -5,11 +5,16 @@
 #include <iostream>
 #include <stdio.h>
 #include <windows.h>
+#include "OrderAnalyze.h"
 int main()
 {
-    SYSTEM_INFO info;
-    GetSystemInfo(&info);
-    printf("%d\n", info.dwPageSize);
+    printf("welcome to LeiSql\n");
+    char* order;
+    LeiSQL::OrderAnalyze orderAnalyze;
+    while (scanf("%s",order))
+    {
+        orderAnalyze.Process(order);
+    }
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
