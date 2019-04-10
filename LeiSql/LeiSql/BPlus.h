@@ -91,8 +91,8 @@ namespace LeiSQL
         BPlus();
         void Insert(const char* username,const char* passwd);
         void Change(const char* username,const char* newPasswd);
-        void Delete(const char* username,const char* passwd);
-        DataNode Find(const char* username);
+        void Delete(const char* username);
+        const char* Find(const char* username);
         ~BPlus();
     private:
         unsigned int  UID;

@@ -17,12 +17,12 @@ namespace LeiSQL
 
     }
 
-    void BPlus::Delete(const char* username, const char* passwd)
+    void BPlus::Delete(const char* username)
     {
 
     }
 
-    LeiSQL::BPlus::DataNode BPlus::Find(const char* username)
+    const char* BPlus::Find(const char* username)
     {
 
     }
