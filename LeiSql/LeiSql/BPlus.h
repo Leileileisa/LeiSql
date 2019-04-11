@@ -49,8 +49,10 @@ namespace LeiSQL
         class TreeNode
         {
         public:
-            TreeNode():PtrStart(malloc(PAGESIZE))
+            class PointNode;
+            TreeNode()
             {
+
             }
             void* Build(long uid, const char* username, const char* passwd)
             {
@@ -78,13 +80,17 @@ namespace LeiSQL
             class PointNode
             {
             public:
+                PointNode():UID(0),ChildNode(nullptr)
+                {
+
+                }
                 PointNode(long uid, TreeNode* childNode = nullptr) :UID(uid), ChildNode(childNode)
                 {
                 }
-                long UID;
-                TreeNode* ChildNode;
+                long UID;//8
+                TreeNode* ChildNode;//8
             };
-            void* PtrStart;
+            PointNode Nodes[256];
         };
         
         unsigned int  UID;
