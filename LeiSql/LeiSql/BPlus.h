@@ -8,11 +8,19 @@ namespace LeiSQL
 {
     class BPlus
     {
+    public:
+        BPlus();
+        void Insert(const char* username,const char* passwd);
+        void Change(const char* username,const char* newPasswd);
+        void Delete(const char* username);
+        const char* Find(const char* username);
+        ~BPlus();
+    private:
         class TreeNode;
         class DataNode
         {
         public:
-            DataNode(int uid,const char* username,const char* passwd,TreeNode* childNode=nullptr) :UID(uid),Username(username),Passwd(passwd),ChildNode(childNode)
+            DataNode(int uid,const char* username,const char* passwd,DataNode* nextNode=nullptr) :UID(uid),Username(username),Passwd(passwd),NextNode(nextNode)
             {
 
             }
@@ -24,77 +32,61 @@ namespace LeiSQL
             {
                 return UID;
             }
-            TreeNode* GetChild()
+            DataNode* GetNext()
             {
-                return ChildNode;
+                return NextNode;
             }
-            void SetChild(TreeNode* dataNode)
+            void SetNext(DataNode* dataNode)
             {
-                ChildNode = dataNode;
+                NextNode = dataNode;
             }
         private:
             long UID;//8
             const char* Username;//8
             const char* Passwd;//8
-            TreeNode* ChildNode;//8
+            DataNode* NextNode;//8
         };
         class TreeNode
         {
         public:
-            TreeNode():PtrStart(malloc(PAGESIZE)),PtrNow(PtrStart)
+            TreeNode():PtrStart(malloc(PAGESIZE))
             {
-                PtrEnd = (void*)(long(PtrStart)+PAGESIZE);
             }
             void* Build(long uid, const char* username, const char* passwd)
             {
-                int length;
-                if ((long)PtrEnd-(long)PtrNow<sizeof(DataNode))
-                {
-                    DataNode* node = Find(FirstNode, uid);
-                    LastNode = new(PtrNow) DataNode(uid,username,passwd);
-                }
-                else
-                {
-
-                }
+                
             }
             
             DataNode* Find(DataNode* firstNode, long uid)
             {
-                DataNode* node = firstNode;
-                DataNode* nextNode = node + sizeof(DataNode);
-                DataNode* lastNode = firstNode + PAGESIZE - sizeof(DataNode);
-                while ((node->GetUID() < uid)&&(nextNode<lastNode))
-                {
-                    node+=sizeof(DataNode);
-                    nextNode += sizeof(DataNode);
-                    if (nextNode->GetUID() > uid)
-                    {
-                        break;
-                    }
-                }
-                if (nextNode == lastNode&&)
-                {
-
-                }
+                
                 
             }
+            void Change(const char* username, const char* newPasswd)
+            {
+
+            }
+            void Delete(const char* username)
+            {
+
+            }
+            void Insert(const char* username, const char* passwd)
+            {
+
+            }
         private:
+            class PointNode
+            {
+            public:
+                PointNode(long uid, TreeNode* childNode = nullptr) :UID(uid), ChildNode(childNode)
+                {
+                }
+                long UID;
+                TreeNode* ChildNode;
+            };
             void* PtrStart;
-            void* PtrNow;
-            void* PtrEnd;
-            DataNode* FirstNode;
-            DataNode* LastNode;
         };
         
-    public:
-        BPlus();
-        void Insert(const char* username,const char* passwd);
-        void Change(const char* username,const char* newPasswd);
-        void Delete(const char* username);
-        const char* Find(const char* username);
-        ~BPlus();
-    private:
         unsigned int  UID;
         TreeNode RootNode;
     };
